@@ -1,0 +1,229 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+.aMargin {
+  margin-left: 5rem;
+}
+.navigation,
+.navigationbrand {
+  padding: 0;
+  background-color: #ef5350;
+  z-index: 10;
+}
+.footer {
+  background-color: #343a40;
+  place-content: center;
+  padding-bottom: 4px;
+}
+.menuitem {
+  width: 18rem;
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 25%;
+  max-width: 25%;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+#sidebar {
+  min-width: 25%;
+  max-width: 25%;
+  min-height: 100vh;
+  position: fixed;
+}
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+}
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+  /* don't forget to add all the previously mentioned styles here too */
+  background: #444c54;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #343a40;
+  text-align: center;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #ef5350;
+  max-height: 22rem;
+  overflow-y: scroll;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  cursor: pointer;
+}
+#sidebar ul li a:hover {
+  color: #ef5350;
+  background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #6d7fcc;
+}
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6d7fcc;
+}
+#content {
+  margin-left: 25%;
+  width: 100%;
+}
+.dashboard-sq-banner {
+  cursor: default;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#3c164f),
+    color-stop(#8a3481),
+    to(#a9449f)
+  );
+  background-image: linear-gradient(to right top, #252222, #ac5250, #ff0500);
+  background-size: cover;
+  height: 385px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 350% auto;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+.dashboard-sq-banner .card-body {
+  width: 100%;
+}
+
+.card .card-body {
+  padding: 1.75rem;
+  padding-top: 0.2rem;
+}
+.justify-content-end {
+  justify-content: flex-start !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+.badge.badge-pill {
+  padding-right: 1.25em;
+  padding-left: 1.25em;
+}
+
+.badge {
+  padding: 0.55em 0.75em 0.6em;
+  font-size: 74%;
+}
+.badge-theme-3,
+.bg-theme-3 {
+  background-color: #af67a4 !important;
+  color: #fff;
+}
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+.align-self-start {
+  align-self: flex-start !important;
+}
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: initial;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+  -webkit-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.dashboard-sq-banner .lead {
+  line-height: 2.3rem;
+}
+.text-white {
+  color: #fff !important;
+}
+.lead {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+.container-fluid {
+  padding: 15px;
+}
+.card-img {
+  heigth: auto;
+}
+.sub-menu:hover {
+  cursor: pointer;
+}
+tbody {
+  color: white;
+}
+.rotateIco {
+  margin: 0;
+  position: fixed;
+  font-size: 3rem;
+  margin-top: -18px;
+  margin-left: 6px;
+  cursor: pointer;
+}
