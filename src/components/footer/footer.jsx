@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "react-bootstrap/Navbar";
+import "./footer.css";
 
 class Foot extends Component {
   state = {};

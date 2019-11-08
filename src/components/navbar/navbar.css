@@ -1,0 +1,11 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+.aMargin {
+  margin-left: 5rem;
+}
+.navigation,
+.navigationbrand {
+  padding: 0;
+  background-color: #ef5350;
+  z-index: 10;
+}

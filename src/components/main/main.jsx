@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Pokemon from "./pokemon";
+import Pokemon from "../pokemon/pokemon";
 import lru from "lru-cache";
-import "../navbar.css";
+import "./main.css";
 
 const cache = new lru({
   maxAge: 300000,
