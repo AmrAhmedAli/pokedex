@@ -211,3 +211,12 @@ tbody {
   margin-left: 6px;
   cursor: pointer;
 }
+.redbtn {
+  background-color: #ef5350;
+}
+.redbtn:focus {
+  background-color: #ff7977;
+}
+.blackbtn {
+  background-color: #343a40;
+}

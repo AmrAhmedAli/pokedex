@@ -15,6 +15,7 @@ class Main extends Component {
   }
 
   async componentDidMount() {
+    console.log(this.props);
     const pokemons = await getPokeheaders();
     this.setState({ pokemons });
   }
@@ -23,12 +24,23 @@ class Main extends Component {
     let cachedPage = cache.get(pokemon);
     if (cachedPage) {
       console.log("fetched");
-      this.setState({});
+      this.setState({
+        card: cachedPage,
+        clickedPoke: pokemon,
+        types: null,
+        stats: null,
+        front: "true"
+      });
     } else {
-      console.log("loading...");
       axios.get("https://pokeapi.co/api/v2/pokemon/" + pokemon).then(res => {
-        console.log("fetched");
         cache.set(pokemon, res.data);
+        this.setState({
+          card: res.data,
+          clickedPoke: pokemon,
+          types: null,
+          stats: null,
+          front: "true"
+        });
       });
     }
   }
@@ -92,19 +104,20 @@ class Main extends Component {
                         &#x21B7;
                       </p>
                       <div className="justify-content-end d-flex flex-column card-body">
-                        <span className="badge badge-pill badge-theme-3 align-self-start mb-3">
+                        <span className="badge badge-pill align-self-start mb-3 blackbtn">
                           <span>{this.state.clickedPoke}</span>
                         </span>
                         <button
                           type="button"
-                          className="btn btn-secondary btn-lg btn-block"
+                          className="btn btn-lg btn-block redbtn"
                           onClick={this.statsClicked}
+                          style={{ "margin-bottom": "1rem" }}
                         >
                           Stats
                         </button>
                         <button
                           type="button"
-                          className="btn btn-secondary btn-lg btn-block"
+                          className="btn btn-lg btn-block redbtn"
                           onClick={this.typesClicked}
                         >
                           Types
