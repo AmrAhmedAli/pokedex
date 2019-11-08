@@ -205,7 +205,7 @@ tbody {
 }
 .rotateIco {
   margin: 0;
-  position: fixed;
+  position: absolute;
   font-size: 3rem;
   margin-top: -18px;
   margin-left: 6px;
