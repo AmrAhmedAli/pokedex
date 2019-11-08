@@ -1,54 +1,38 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Pokemon from "../pokemon/pokemon";
-import lru from "lru-cache";
+import cache from "../services/lrucacheService";
+import getPokeheaders from "../services/pokeheadersService";
 import "./main.css";
 
-const cache = new lru({
-  maxAge: 300000,
-  max: 500000000000,
-  length: n => {
-    // n = item passed in to be saved (value)
-    return n.length * 100;
-  }
-});
-
 class Main extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    console.log(this.props);
-    axios.get("https://pokeapi.co/api/v2/pokemon").then(res => {
-      this.setState({ pokemons: res.data.results });
-    });
+    this.state = {};
+
+    this.handleClick = this.handleClick.bind(this);
   }
-  handleHover = pokemon => {
-    const cachedPage = cache.get(pokemon);
+
+  async componentDidMount() {
+    const pokemons = await getPokeheaders();
+    this.setState({ pokemons });
+  }
+
+  async handleClick(pokemon) {
+    let cachedPage = cache.get(pokemon);
     if (cachedPage) {
-      console.log("cached");
-      console.log(cachedPage);
+      console.log("fetched");
+      this.setState({});
     } else {
+      console.log("loading...");
       axios.get("https://pokeapi.co/api/v2/pokemon/" + pokemon).then(res => {
+        console.log("fetched");
         cache.set(pokemon, res.data);
       });
     }
-  };
+  }
 
-  handleClick = pokemon => {
-    let cachedPage = cache.get(pokemon);
-    if (cachedPage) {
-      console.log("cached");
-      this.setState({
-        card: cachedPage,
-        clickedPoke: pokemon,
-        types: null,
-        stats: null,
-        front: "true"
-      });
-    } else {
-      console.log("loading....");
-    }
-  };
   statsClicked = () => {
     this.setState({ stats: "true", types: null });
   };
