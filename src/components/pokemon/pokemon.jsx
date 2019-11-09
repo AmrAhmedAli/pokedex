@@ -4,7 +4,6 @@ import "./pokemon.css";
 import cache from "../services/lrucacheService";
 import axios from "axios";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { MDBIcon } from "mdbreact";
 
@@ -40,7 +39,7 @@ class Pokemon extends Component {
         onMouseOver={() => this.handleHover(this.state.name)}
         onClick={() => this.props.Clicked(this.state.name)}
       >
-        <a>
+        <a className="link" href={"#" + this.state.name}>
           {this.state.name}
           {this.state.load && (
             <Spinner
